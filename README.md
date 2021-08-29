@@ -43,7 +43,10 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 - pacman -Sl galaxy | grep installed | cut -d" " -f2 | pacman -S -
 
 ### Remove junky
--  ```for user in journal journal-gateway timesync network bus-proxy journal-remote journal-upload resolve coredump; do
+-  
+```
+for user in journal journal-gateway timesync network bus-proxy journal-remote journal-upload resolve coredump; do
    userdel systemd-$user
  done
- rm -vfr /{etc,var/lib}/systemd```
+ rm -vfr /{etc,var/lib}/systemd
+ ```
