@@ -9,9 +9,9 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 
 ---
 
-### Procedure
+### Used procedure (from https://wiki.artixlinux.org/Main/Migration)
 
-- boot to a bare bootstrap root
+- boot to a bare bootstrap rootfs
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.conf -o /etc/pacman.conf
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/mirrorlist -o /etc/pacman.d/mirrorlist
 - pacman-key --init
@@ -20,13 +20,10 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 - pacman-key --populate artix
 - pacman-key --lsign-key 95AEC5D0C1E294FC9F82B253573A673A53C01BC2
 
-- *choose your init*
- **OpenRC**
-- pacman -Sw base base-devel openrc-system grub linux linux-headers elogind-openrc openrc netifrc grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
- **runit**
-- pacman -Sw base base-devel runit-system grub linux linux-headers runit elogind-runit grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
- **s6**
-- pacman -Sw base base-devel s6-system grub linux linux-headers s6 elogind-s6 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
+*choose your init* 
+- - **OpenRC** pacman -Sw base base-devel openrc-system grub linux linux-headers elogind-openrc openrc netifrc grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
+- - **runit** pacman -Sw base base-devel runit-system grub linux linux-headers runit elogind-runit grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
+- - **s6** pacman -Sw base base-devel s6-system grub linux linux-headers s6 elogind-s6 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles
 
 - pacman -Rdd --noconfirm systemd systemd-libs pacman-mirrorlist dbus'
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/ mirrorlist -o /etc/pacman.d/mirrorlist
