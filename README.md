@@ -16,6 +16,7 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/mirrorlist -o /etc/pacman.d/mirrorlist
 - pacman-key --init
 - pacman-key --populate
+- pacman -Sy
 - pacman -S artix-keyring
 - pacman-key --populate artix
 - pacman-key --lsign-key 95AEC5D0C1E294FC9F82B253573A673A53C01BC2
