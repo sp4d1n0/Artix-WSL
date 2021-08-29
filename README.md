@@ -34,6 +34,7 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 
 #### Install needed packages
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/mirrorlist -o /etc/pacman.d/mirrorlist
+- pacman -Sy
 - - *openrc* 
 ```pacman -S base base-devel openrc-system grub linux linux-headers openrc elogind-openrc netifrc mkinitcpio grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base```
 - - *runit* 
