@@ -30,7 +30,7 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 ```pacman -Sw base base-devel s6-system grub linux linux-headers s6 elogind-s6 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles```
 
 #### Remove useless systemd
-- pacman -Rdd --noconfirm systemd systemd-libs pacman-mirrorlist dbus'
+- pacman -Rdd --noconfirm systemd systemd-libs pacman-mirrorlist dbus
 
 #### Install needed packages
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/ mirrorlist -o /etc/pacman.d/mirrorlist
