@@ -59,3 +59,8 @@ for user in journal journal-gateway timesync network bus-proxy journal-remote jo
  done
  rm -vfr /{etc,var/lib}/systemd
  ```
+ 
+ #### Additional steps
+ - pacman -S vim
+ - rm /etc/artix-release-prev
+ - pacman -Syuu
