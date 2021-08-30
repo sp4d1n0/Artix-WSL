@@ -89,5 +89,6 @@ for user in journal journal-gateway timesync network bus-proxy journal-remote jo
  - rm /etc/artix-release-prev
  - pacman -Syuu
  - enjoy!
+ 
  ![](https://github.com/sp4d1n0/Artix-WSL/blob/main/capture.png)
 
