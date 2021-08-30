@@ -5,7 +5,8 @@
 
 ## Content
 
-Images for all supported init (OpenRC, RunIT and S6) are provided. They are built from the minimal archlinux bootstrap image.
+Instructions to prepare images for all supported init system were provided. They all are functional, and it's mainly a personal prefence which one to choose. Been WSL2 a non real booted system, they provide just a thin layer to deal with services and deamons...
+A launcher is provided, which can be renamed and reused to create as many variants you want. The launcher, beside converting the rootfs to an ext4.vhdx usable to WSL2, provide configuration tool, such as setting the default user and some WSL variables. Check all its flags in a command line.
 
 ---
 
