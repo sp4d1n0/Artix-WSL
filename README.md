@@ -5,15 +5,18 @@
 
 ## Content
 
-Instructions to prepare images for all supported init system were provided. They all are functional, and it's mainly a personal prefence which one to choose. Been WSL2 a non real booted system, they provide just a thin layer to deal with services and deamons...
-A launcher is provided, which can be renamed and reused to create as many variants you want. The launcher, beside converting the rootfs to an ext4.vhdx usable to WSL2, provide configuration tool, such as setting the default user and some WSL variables. Check all its flags in a command line.
+Instructions to prepare images for all supported init system were provided. They all are functional, and it's mainly a personal prefence which one to choose. 
+Been WSL2 a non real booted system, they provide just a thin layer to deal with services and deamons...
+
+A launcher is provided, which can be renamed and reused to create as many variants you want. 
+The launcher, beside converting the rootfs to an ext4.vhdx usable to WSL2, provide configuration tool, such as setting the default user and some WSL variables. Check all its flags in a command line.
 
 ---
 
 ## HowTo
 
 ### RootFS
-To prepare our barebon root filesystem, you'll use the bootstrap archive released by archlinux (artixlinux yet have no such an image to use)
+To prepare our barebone root filesystem, you'll use the bootstrap archive released by archlinux (artixlinux yet have no such an image to use)
 - download the latest bootstrap from https://mirrors.edge.kernel.org/archlinux/iso/latest/
 - tar -xzf archlinux-bootstrap-$YOURDOWNLOADEDVERSION-x86_64.tar.gz
 - pushd root.x86_64
