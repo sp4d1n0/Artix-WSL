@@ -3,6 +3,8 @@
 > Artix Linux is a rolling-release distribution, based on Arch Linux.
 > It uses OpenRC, runit or s6 as init because PID1 must be simple, secure and stable.
 
+![](https://github.com/sp4d1n0/Artix-WSL/blob/main/artix.jpg)
+
 ## Content
 
 Instructions to prepare images for all supported init system were provided. They all are functional, and it's mainly a personal prefence which one to choose. 
