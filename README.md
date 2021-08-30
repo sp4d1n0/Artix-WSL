@@ -9,9 +9,23 @@ Images for all supported init (OpenRC, RunIT and S6) are provided. They are buil
 
 ---
 
-### Used procedure (from https://wiki.artixlinux.org/Main/Migration)
+## HowTo
 
-- boot to a bare bootstrap rootfs
+### RootFS
+To prepare our barebon root filesystem, you'll use the bootstrap archive released by archlinux (artixlinux yet have no such an image to use)
+- download the latest bootstrap from https://mirrors.edge.kernel.org/archlinux/iso/latest/
+- tar -xzf archlinux-bootstrap-$YOURDOWNLOADEDVERSION-x86_64.tar.gz
+- pushd root.x86_64
+- tar -czpf ../rootfs.tar.gz *
+- popd
+- copy your generated rootfs.tar.gz to a folder, and rename it to 'install.tar.gz'
+- copy the included launcher in the same folder
+- run the launcher, which will prepare a new ext4.vhdx and register the new distro (*the name of the launcher will be the name of the registered distro, so rename it as you prefer...*)
+- enter your new bare distro - through the launcher - and carefully follow the next steps:
+
+### Migration (from https://wiki.artixlinux.org/Main/Migration)
+
+As soon as you enter your new distro, proceed with those migration steps:
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.conf -o /etc/pacman.conf
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/mirrorlist -o /etc/pacman.d/mirrorlist
 - pacman-key --init
