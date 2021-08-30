@@ -80,5 +80,9 @@ for user in journal journal-gateway timesync network bus-proxy journal-remote jo
  
  #### Additional steps
  - pacman -S vim
+ - vim /etc/pacman.con
+ ```
+ change 'SigLevel = Never' to 'SivLevel = Required DatabaseOptional'
+ ```
  - rm /etc/artix-release-prev
  - pacman -Syuu
