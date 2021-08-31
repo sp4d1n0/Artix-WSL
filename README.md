@@ -1,4 +1,4 @@
-# Artix Linux WSL2 images
+# Artix Linux WSL2 - how-to produce you own images
 
 > Artix Linux is a rolling-release distribution, based on Arch Linux.
 > It uses OpenRC, runit or s6 as init because PID1 must be simple, secure and stable.
