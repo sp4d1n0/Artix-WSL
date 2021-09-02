@@ -13,6 +13,9 @@ Been WSL2 a non real booted system, they provide just a thin layer to deal with 
 A launcher is provided, which can be renamed and reused to create as many variants you want. 
 The launcher, beside converting the rootfs to an ext4.vhdx usable to WSL2, provide configuration tool, such as setting the default user and some WSL variables. Check all its flags in a command line.
 
+### For the impatients: an example minimal prebuilt image is provided (runit), inside ./rootfs. Just join the three chunk together - 7-Zip is able to do that - and put the resulting install.tar.gz in a new folder, with the given launcher. Enjoy! 
+**Beware that's a very minimal setup, stripped to the very barebone!**
+
 ---
 
 ## HowTo
