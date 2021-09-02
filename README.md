@@ -22,9 +22,9 @@ To prepare our barebone root filesystem, you'll use the bootstrap archive releas
 - download the latest bootstrap from https://mirrors.edge.kernel.org/archlinux/iso/latest/
 - tar -xzf archlinux-bootstrap-$YOURDOWNLOADEDVERSION-x86_64.tar.gz
 - pushd root.x86_64
-- tar -czpf ../rootfs.tar.gz *
+- tar -czpf ../install.tar.gz *
 - popd
-- copy your generated rootfs.tar.gz to a folder, and rename it to 'install.tar.gz'
+- copy your generated install.tar.gz to a folder
 - copy the included launcher in the same folder
 - run the launcher, which will prepare a new ext4.vhdx and register the new distro (*the name of the launcher will be the name of the registered distro, so rename it as you prefer...*)
 - enter your new bare distro - through the launcher - and carefully follow the next steps:
