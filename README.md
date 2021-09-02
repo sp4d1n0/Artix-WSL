@@ -90,5 +90,12 @@ for user in journal journal-gateway timesync network bus-proxy journal-remote jo
  - pacman -Syuu
  - enjoy!
  
+ #### Post Install
+ - useradd -m $YOURNAME
+ - usermod -G wheel $YOURNAME
+ - visudo 
+ - uncomment one of the lines which allow member of wheel group to issude commands with sudo
+ - install whatever you want...
+ 
  ![](https://github.com/sp4d1n0/Artix-WSL/blob/main/capture.png)
 
