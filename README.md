@@ -44,13 +44,20 @@ As soon as you enter your new distro, proceed with those migration steps:
 - pacman-key --populate artix
 - pacman-key --lsign-key 95AEC5D0C1E294FC9F82B253573A673A53C01BC2
 
-#### Choose your init
+#### Install
+
+The migration guide is created from the perspective of a live system, so it list much more packages than the needed for a WSL2 image. If you want to follow strictly the migration guide, then you'll need the folloing packages:
+- ```pacman -Sw base base-devel grub linux linux-headers netifrc mkinitcpio grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base``` 
+However, if you want, you install just the very minimum:
+- ```pacman -Sw base base-devel archlinux-mirrorlist lsb-release connman esysusers etmpfiles artix-branding-base```
+And then, if needed, your preferred init system...
+
 - - **OpenRC** 
-```pacman -Sw base base-devel openrc-system grub linux linux-headers elogind-openrc openrc netifrc grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles```
+```pacman -Sw openrc-system elogind-openrc openrc```
 - - **runit** 
-```pacman -Sw base base-devel runit-system grub linux linux-headers runit elogind-runit grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles```
+```pacman -Sw runit-system runit elogind-runit```
 - - **s6** 
-```pacman -Sw base base-devel s6-system grub linux linux-headers s6 elogind-s6 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release esysusers etmpfiles```
+```pacman -Sw s6-system s6 elogind-s6```
 
 #### Remove useless systemd
 - pacman -Rdd --noconfirm systemd systemd-libs pacman-mirrorlist dbus
@@ -58,14 +65,19 @@ As soon as you enter your new distro, proceed with those migration steps:
 #### Install needed packages
 - curl https://raw.githubusercontent.com/sp4d1n0/Artix-WSL/main/etc/pacman.d/mirrorlist -o /etc/pacman.d/mirrorlist
 - pacman -Sy
+
+- - ```pacman -Sy base base-devel grub linux linux-headers netifrc mkinitcpio grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base``` or
+- - ```pacman -Sy base base-devel archlinux-mirrorlist lsb-release connman esysusers etmpfiles artix-branding-base```
+
+and then one of the init system artix provide. Again, only if you want, you really do not need them in WSL2:
 - - *openrc* 
-```pacman -S base base-devel openrc-system grub linux linux-headers openrc elogind-openrc netifrc mkinitcpio grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base```
+```pacman -S openrc-systemopenrc elogind-openrc```
 - - *runit* 
-```pacman -S base base-devel runit-system grub linux linux-headers runit elogind-runit grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base```
+```pacman -S runit-system runit elogind-runit```
 - - *s6*
-```pacman -S base base-devel s6-system grub linux linux-headers s6 elogind-s6 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base```
+```pacman -S s6-system s6 elogind-s6```
 - - *66*
-```pacman -S base base-devel grub linux linux-headers 66 elogind-66 grub mkinitcpio archlinux-mirrorlist net-tools rsync nano lsb-release connman esysusers etmpfiles artix-branding-base```
+```pacman -S 66 elogind-66```
 
 #### Reinstall all packages from Artix repositories
 - mv /etc/artix-release /etc/artix-release-prev
@@ -74,8 +86,7 @@ As soon as you enter your new distro, proceed with those migration steps:
 - pacman -Sl world | grep installed | cut -d" " -f2 | pacman -S -
 - pacman -Sl galaxy | grep installed | cut -d" " -f2 | pacman -S -
 
-#### Remove junky
--  
+#### Remove junk
 ```
 for user in journal journal-gateway timesync network bus-proxy journal-remote journal-upload resolve coredump; do
    userdel systemd-$user
