@@ -3,7 +3,7 @@
 > Artix Linux is a rolling-release distribution, based on Arch Linux.
 > It uses OpenRC, runit or s6 as init because PID1 must be simple, secure and stable.
 
-![](https://github.com/sp4d1n0/Artix-WSL/blob/main/artix.jpg)
+![](https://github.com/sp4d1n0/Artix-WSL/blob/main/pics/artix.jpg)
 
 ## Content
 
@@ -97,5 +97,5 @@ for user in journal journal-gateway timesync network bus-proxy journal-remote jo
  - uncomment one of the lines which allow member of wheel group to issude commands with sudo
  - install whatever you want...
  
- ![](https://github.com/sp4d1n0/Artix-WSL/blob/main/capture.png)
+ ![](https://github.com/sp4d1n0/Artix-WSL/blob/main/pics/capture.png)
 
